@@ -13,6 +13,21 @@ public class Main {
         items.add(4);
 
         printDoubled(items);
+
+        System.out.println("**********************************************************************");
+
+        FootballPlayer joe = new FootballPlayer("Joe");
+        BaseballPlayer pat = new BaseballPlayer("Pat");
+        SoccerPlayer beckham = new SoccerPlayer("Beckham");
+
+        Team<BaseballPlayer> liverpool = new Team("Liverpool");
+
+        //liverpool.addPlayer(joe);
+        liverpool.addPlayer(pat);
+        //liverpool.addPlayer(beckham);
+
+        //Team<String> brokenTeam = new Team<>("what kind of team is this?");
+
     }
 
     private static void printDoubled(ArrayList<Integer> items) {
