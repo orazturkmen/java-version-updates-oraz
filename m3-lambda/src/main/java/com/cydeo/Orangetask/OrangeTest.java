@@ -19,6 +19,19 @@ public class OrangeTest {
 
         OrangeFormatter orangeLambda = orange -> "An Orange of " + orange.getWeight() + "g";
         prettyPrintOrange(inventory, orangeLambda);
+
+        prettyPrintOrange(inventory, orange -> "An Orange of " + orange.getWeight() + "g");
+
+        System.out.println("***************************************************************************************");
+        OrangeFormatter fancyFormatter = orange -> {
+            String str = orange.getWeight() > 150 ? "Heavy" : "Light";
+            return "A " + str + " " + orange.getColor() + " orange";
+        };
+
+
+        prettyPrintOrange(inventory, fancyFormatter);
+
+
     }
 
     private static void prettyPrintOrange(List<Orange> inventory, OrangeFormatter formatter){

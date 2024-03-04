@@ -17,9 +17,9 @@ public class AppleTest {
         inventory.add(new Apple(Color.RED, 50));
         inventory.add(new Apple(Color.RED, 250));
 
-        List<Apple> apple1 = prettyPrintApple(inventory, new colorApple());
+        prettyPrintApple(inventory, new colorApple());
         System.out.println("*******************************************************");
-        List<Apple> apple2 = prettyPrintApple(inventory, new weightApple());
+        prettyPrintApple(inventory, new weightApple());
 
     }
 
