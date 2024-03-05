@@ -21,5 +21,13 @@ public class Main {
 
         Collections.sort(list,((o1, o2) -> (o1>o2)? -1: (o1<o2)? 1 : 0));
         System.out.println(list);
+
+        System.out.println("******************************************************************");
+        //Ascending order
+        list.sort(((o1, o2) -> o1.compareTo(o2)));
+        System.out.println(list);
+
+        list.sort((o2,o1) -> o1.compareTo(o2));
+        System.out.println(list);
     }
 }
