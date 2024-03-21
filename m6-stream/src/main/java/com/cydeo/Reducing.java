@@ -22,22 +22,28 @@ public class Reducing {
 
         Integer totalCal = DishData.getAll().stream()
                 .map(Dish::getCalories)
-                .reduce((a, b) -> a+b)
+                .reduce((a,b) -> a+b)
                 .get();
         System.out.println("totalCal = " + totalCal);
 
         System.out.println("********************************" + "********************************");
         //Max and Mix
-        Optional<Integer> min = numbers.stream().reduce(Integer::min);
+        int min = numbers.stream().reduce(Integer::min).get();
         Optional<Integer> max = numbers.stream().reduce(Integer::max);
         Optional<Integer> sum2 = numbers.stream().reduce(Integer::sum);
 
-        System.out.println("min = " + min.get());
+        System.out.println("min = " + min);
         System.out.println("max = " + max.get());
         System.out.println("sum = " + sum2.get());
 
         //COUNT
         long dishCount = DishData.getAll().stream().count();
         System.out.println("dishCount = " + dishCount);
+
+        long count = numbers.stream().count();
+        System.out.println("count = " + count);
+
+        int min1 = numbers.stream().reduce((a,b) -> a<b? a:b).get();
+        System.out.println(min1);
     }
 }

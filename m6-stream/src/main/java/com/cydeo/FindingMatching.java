@@ -35,13 +35,13 @@ public class FindingMatching {
         System.out.println(dish2.get());
 
         System.out.println("\nPARALLEL STREAMS (Async): ");
-        System.out.println(IntStream.range(0,100).parallel().findAny());
-        System.out.println(IntStream.range(0,100).parallel().findFirst());
+        System.out.println("findAny(): " + IntStream.range(0,100).parallel().findAny().getAsInt());
+        System.out.println("findFirst: " + IntStream.range(0,100).parallel().findFirst().getAsInt());
 
         System.out.println("***********************************************************************");
 
         List<String> list1 = Arrays.asList("Johnny", "David", "Jack", "Duke", "Jill", "Dany", "Julia", "Jeni", "Divya");
-        List<String> list2 = Arrays.asList("Johnny", "David", "Jack", "Duke", "Jill", "Dany", "Julia", "Jeni", "Divya");
+
         Optional<String> findFirst = list1.parallelStream().filter(s->s.startsWith("D")).findFirst();
         Optional<String> findAny = list1.parallelStream().filter(s->s.startsWith("D")).findAny();
 
